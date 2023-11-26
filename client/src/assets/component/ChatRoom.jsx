@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { over } from 'stompjs';
 // import SockJS from 'sockjs-client';
 import SockJS from 'sockjs-client/dist/sockjs';
+//the global is undefined error was because global is only available in Node.js environment
+//the solution for this error is using the built version for use this library in browser
+
 var stompClient=null;
 const ChatRoom = () => {
   const [publicChat, setPublicChat] = useState([]);
