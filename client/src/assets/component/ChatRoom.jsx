@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { over } from 'stompjs';
-import SockJS from 'sockjs-client';
-
+// import SockJS from 'sockjs-client';
+import SockJS from 'sockjs-client/dist/sockjs';
 var stompClient=null;
 const ChatRoom = () => {
   const [publicChat, setPublicChat] = useState([]);
