@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {over} from 'stompjs';
+import { over } from 'stompjs';
 import SockJS from 'sockjs-client';
 
 var stompClient=null;
@@ -9,7 +9,7 @@ const ChatRoom = () => {
   const [tab, setTab] = useState("CHATROOM")
   const [userData, setUserData] = useState({
     username:"",
-    recievername:"",
+    receivername:"",
     connected: false,
     message:""
   })
@@ -88,14 +88,13 @@ const ChatRoom = () => {
     if (stompClient){
       let chatMessage={
         senderName:userData.username,
-        recievername:tab,
+        receivername:tab,
         message:userData.message,
         status: 'MESSAGE'
       };
-      if(userData.username !==tab){
-        privateChat.set(tab).push(chatMessage);
-        setPrivateChat(new Map(privateChat));
-      }
+      let privateChatMessages = privateChat.get(tab) || [];
+      privateChatMessages.push(chatMessage);
+      privateChat.set(tab, privateChatMessages);
       stompClient.send('/app/message',{},JSON.stringify(chatMessage));
       setUserData({...userData,"message":""});
     }
@@ -144,7 +143,7 @@ const ChatRoom = () => {
       </div>}
       {tab!=="CHATROOM" && <div className='chat-content'>
       <ul className='chat-messages'>
-          {[...publicChat.get(tab)].map((chat,index)=> (
+          {[...(privateChat.get(tab)|| [])].map((chat,index)=> (
             <li className='message' key={index}>
               {chat.senderName !==userData.username && <div className='avatar'>
                 {chat.senderName}
