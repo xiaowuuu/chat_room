@@ -139,7 +139,7 @@ const ChatRoom = () => {
             className='input-message' 
             placeholder='enter your message' 
             value={userData.message}
-            onChange={handleValue}
+            onChange={handleMessage}
             />
             <button type="button" className='send-button' onClick={sendPublicMessage}>Send</button>
           </div>
@@ -164,7 +164,7 @@ const ChatRoom = () => {
             name='message' 
             placeholder={`enter message for ${tab}`}
             value={userData.message}
-            onChange={handleValue}
+            onChange={handleMessage}
             />
             <button type="button" className='send-button' onClick={sendPrivateMessage}>Send</button>
           </div>
