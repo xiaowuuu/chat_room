@@ -115,8 +115,8 @@ const ChatRoom = () => {
           <ul>
             <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM"}`}>Chatroom</li>
             {[...privateChat.keys()].map((name, index)=>(
-              <li className={`member ${tab===name && "active"}`} key={index}>
-                {name}
+              <li type="none" className={`member ${tab===name && "active"}`} key={index}>
+                {name} joined chatroom.
               </li>
             ))}
           </ul>
@@ -179,6 +179,7 @@ const ChatRoom = () => {
       placeholder='Enter the user name'
       value={userData.username}
       onChange={handleValue}
+      required
       />
       <button type="button" onClick={registerUser}>Connect</button>
       </div>}
