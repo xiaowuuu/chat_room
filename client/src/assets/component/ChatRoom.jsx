@@ -108,6 +108,7 @@ const ChatRoom = () => {
   return (
     <div className="container">
       {/* if it's not connected then you need to input name */}
+      <div className='logo'>ChatRoom</div>
       {userData.connected?
       <div className='chat-box'>
         <div className='member-list'>
