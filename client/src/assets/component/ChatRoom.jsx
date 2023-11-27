@@ -147,8 +147,8 @@ const ChatRoom = () => {
       </div>}
       {tab!=="CHATROOM" && <div className='chat-content'>
       <ul className='chat-messages'>
-          {[...(privateChat.get(tab)|| [])].map((chat,index)=> (
-            <li className='message' key={index}>
+        {[...privateChat.get(tab)].map((chat,index)=> (
+            <li className={`message ${chat.senderName === userData.username && "self"}`} key={index}>
               {chat.senderName !==userData.username && <div className='avatar'>
                 {chat.senderName}
                 </div>}
