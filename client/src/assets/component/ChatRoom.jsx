@@ -106,10 +106,12 @@ const ChatRoom = () => {
     console.log(err);
   }
   return (
+    <>
+    <div className='logo'><p className='logo-letter'>ChatRoom</p></div>
     <div className="container">
       {/* if it's not connected then you need to input name */}
-      <div className='logo'>ChatRoom</div>
-      {userData.connected?
+      
+      {userData.connected? 
       <div className='chat-box'>
         <div className='member-list'>
           <ul>
@@ -138,7 +140,7 @@ const ChatRoom = () => {
           <div className='send-messages'>
             <input type="text" 
             className='input-message' 
-            placeholder='enter your message' 
+            placeholder='@All' 
             value={userData.message}
             onChange={handleMessage}
             />
@@ -163,7 +165,7 @@ const ChatRoom = () => {
             <input type="text" 
             className='input-message'
             name='message' 
-            placeholder={`enter message for ${tab}`}
+            placeholder={`@${tab}`}
             value={userData.message}
             onChange={handleMessage}
             />
@@ -184,6 +186,7 @@ const ChatRoom = () => {
       <button type="button" onClick={registerUser}>Connect</button>
       </div>}
       </div>
+      </>
   )
 }
 

@@ -5,14 +5,22 @@
 
 .container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 0 2rem;
   width: 100%;
 }
 
 .logo {
   margin: 0; 
+  padding:10px;
   position: sticky;
   top: 0;
   z-index:0;
+  background-color: #2D62EC;
+}
+
+.logo-letter {
+  font-size: 25px;
+  color:white;
+  font-family: 'Borel', cursive;
 }
