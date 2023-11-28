@@ -32,6 +32,12 @@ button {
   margin: 10px
 }
 
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .register{
   margin: 10px;
 }
@@ -41,4 +47,12 @@ input {
   border: none;
   padding: 10px;
   border-radius: 30px;
+}
+
+.chat-feed {
+  background-color: #F4F7FE;
+  width: 346px;
+  height: 908px;
+  border-radius: 30px;
+  margin-top: 10px;
 }

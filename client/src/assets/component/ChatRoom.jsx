@@ -114,6 +114,9 @@ const ChatRoom = () => {
       {userData.connected? 
       <div className='chat-box'>
         <div className='member-list'>
+          
+        </div>
+        <div className='chat-feed'>
           <ul>
             <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Chatroom</li>
             {[...privateChat.keys()].map((name, index)=>(
