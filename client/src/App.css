@@ -5,8 +5,6 @@
 
 .container {
   max-width: 1000px;
-  margin: 10px auto;
-  padding: 0 2rem;
   width: 100%;
 }
 
@@ -23,4 +21,24 @@
   font-size: 25px;
   color:white;
   font-family: 'Borel', cursive;
+}
+
+button {
+  background-color: #2D62EC;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  color: white;
+  margin: 10px
+}
+
+.register{
+  margin: 10px;
+}
+
+input {
+  background-color: #F4F7FE;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
 }
