@@ -10,6 +10,7 @@ const ChatRoom = () => {
   const [publicChat, setPublicChat] = useState([]);
   const [privateChat, setPrivateChat] = useState(new Map());
   const [tab, setTab] = useState("CHATROOM")
+  const [memberList, setMemberList] = useState([]);
   const [userData, setUserData] = useState({
     username:"",
     receivername:"",
@@ -45,6 +46,7 @@ const ChatRoom = () => {
       message:userData.message,
       status:'JOIN'
     };
+    setMemberList((prevMembers)=> [...prevMembers, userData.username]);
     stompClient.send('/app/message', {}, JSON.stringify(chatMessage));
   }
 
@@ -114,7 +116,14 @@ const ChatRoom = () => {
       {userData.connected? 
       <div className='chat-box'>
         <div className='member-list'>
-          
+          <ul type="none">
+          <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Chatroom</li>
+          {[...privateChat.keys()].map((name, index)=>(
+              <li type="none" onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>
+                {name}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className='chat-feed'>
           <ul>
