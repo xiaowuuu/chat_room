@@ -59,8 +59,8 @@ input {
   font-size: 20px;
 }
 
-.member-list,.chat-update {
-  display: inline-block;
+.member-list,.feed {
+  display:inline-block;
 }
 
 /* .message, .chat-feed {

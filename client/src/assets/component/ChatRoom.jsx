@@ -127,6 +127,7 @@ const ChatRoom = () => {
         </div>
 
         {tab==="CHATROOM" && <div className='chat-content'>
+          <div className='feed'>
           <div className='message-feed'>
           <ul className='chat-messages'>
           {publicChat.map((chat,index)=> (
@@ -151,7 +152,7 @@ const ChatRoom = () => {
             ))}
           </ul>
         </div>
-
+        </div>
           <div className='send-messages'>
             <input type="text" 
             className='input-message' 
