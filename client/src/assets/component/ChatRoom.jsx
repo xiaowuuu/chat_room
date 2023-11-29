@@ -126,15 +126,6 @@ const ChatRoom = () => {
           </ul>
         </div>
 
-        <div className='chat-update'>
-          <ul>
-            {[...privateChat.keys()].map((name, index)=>(
-              <li type="none" onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>
-                {name} joined chatroom.
-              </li>
-            ))}
-          </ul>
-        </div>
         {tab==="CHATROOM" && <div className='chat-content'>
           <div className='message-feed'>
           <ul className='chat-messages'>
@@ -151,6 +142,15 @@ const ChatRoom = () => {
           ))}
           </ul>
           </div>
+          <div className='chat-update'>
+          <ul>
+            {[...privateChat.keys()].map((name, index)=>(
+              <li type="none" onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>
+                {name} joined chatroom.
+              </li>
+            ))}
+          </ul>
+        </div>
 
           <div className='send-messages'>
             <input type="text" 
