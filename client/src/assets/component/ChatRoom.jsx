@@ -128,11 +128,11 @@ const ChatRoom = () => {
         </div>
 
         {tab==="CHATROOM" && <div className='chat-content'>
-          <div className='feed'>
+        <div className='feed'>
           <div className='message-feed'>
           <ul className='chat-messages'>
           {publicChat.map((chat,index)=> (
-            <li className='message' key={index}>
+            <li className='message' key={index} type="none">
               {chat.senderName !==userData.username && <div className='avatar'>
                 {chat.senderName}
                 </div>}
@@ -145,7 +145,7 @@ const ChatRoom = () => {
           </ul>
           </div>
           <div className='chat-update'>
-          <ul>
+          <ul className='private-chat-messages'>
             {[...privateChat.keys()].map((name, index)=>(
               <li type="none" onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>
                 {name} joined chatroom.
@@ -166,7 +166,7 @@ const ChatRoom = () => {
       </div>}
       </div>
       {tab!=="CHATROOM" && <div className='chat-content'>
-      <ul className='chat-messages'>
+      <ul className='send-messages'>
         {[...privateChat.get(tab)].map((chat,index)=> (
             <li className={`message ${chat.senderName === userData.username && "self"}`} key={index}>
               {chat.senderName !==userData.username && <div className='avatar'>
