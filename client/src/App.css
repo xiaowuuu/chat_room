@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html,body{
+    height: 100%
+}
+
 .container {
   max-width: 1000px;
   width: 100%;
@@ -52,7 +56,7 @@ input {
 .member-list {
   background-color: #F4F7FE;
   width: 346px;
-  height: 908px;
+  height: 670px;
   border-radius: 30px;
   margin-top: 10px;
   padding: 20px 40px;
@@ -66,4 +70,11 @@ input {
 
 .row-container {
   display: flex;
+}
+
+
+.send-messages {
+  position: fixed;
+    bottom: 0;
+    width: 100%;
 }
