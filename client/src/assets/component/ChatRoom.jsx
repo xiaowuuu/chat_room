@@ -115,6 +115,7 @@ const ChatRoom = () => {
       
       {userData.connected? 
       <div className='chat-box'>
+        <div className='row-container'>
         <div className='member-list'>
           <ul type="none">
           <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Chatroom</li>
@@ -163,6 +164,7 @@ const ChatRoom = () => {
             <button type="button" className='send-button' onClick={sendPublicMessage}>Send</button>
           </div>
       </div>}
+      </div>
       {tab!=="CHATROOM" && <div className='chat-content'>
       <ul className='chat-messages'>
         {[...privateChat.get(tab)].map((chat,index)=> (

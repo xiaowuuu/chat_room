@@ -59,11 +59,11 @@ input {
   font-size: 20px;
 }
 
-.member-list,.feed {
+/* .chat-box,.feed {
   display:inline-block;
-}
+} */
 
-/* .message, .chat-feed {
-  display:flex;
-  flex-direction: row;
-}  */
+
+.row-container {
+  display: flex;
+}
