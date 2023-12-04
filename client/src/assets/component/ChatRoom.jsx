@@ -116,42 +116,41 @@ const ChatRoom = () => {
       {userData.connected? 
       <div className='chat-box'>
         <div className='row-container'>
-        <div className='member-list'>
-          <ul type="none">
-          <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Chatroom</li>
-          {[...privateChat.keys()].map((name, index)=>(
-              <li type="none" onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>
-                {name}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {tab==="CHATROOM" && <div className='chat-content'>
-        <div className='feed'>
-          <div className='message-feed'>
-          <ul className='chat-messages'>
-          {publicChat.map((chat,index)=> (
-            <li className='message' key={index} type="none">
-              {chat.senderName !==userData.username && <div className='avatar'>
-                {chat.senderName}
-                </div>}
-                <div className='message-data'>{chat.message}</div>
-                {chat.senderName ===userData.username && <div className='avatar self'>
-                {chat.senderName}
-                </div>}  
-            </li>
-          ))}
-          </ul>
+          <div className='member-list'>
+            <ul>
+            <li onClick={()=>{setTab("CHATROOM")}} className={`member ${tab==="CHATROOM" && "active"}`}>Chatroom</li>
+            {[...privateChat.keys()].map((name, index)=>(
+                <li onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {tab==="CHATROOM" && <div className='chat-content'>
+          <div className='feed'>
+            <div className='message-feed'>
+              <ul className='chat-messages'>
+              {publicChat.map((chat,index)=> (
+                <li className='message' key={index}>
+                  {chat.senderName !==userData.username && <div className='avatar'>
+                    {chat.senderName}
+                    </div>}
+                    {chat.senderName}
+                    <div className='message-data'>{chat.message}</div>{chat.senderName ===userData.username && <div className='avatar self'>
+                      
+                    </div>}  
+                </li>
+              ))}
+              </ul>
           </div>
           <div className='chat-update'>
           <ul className='private-chat-messages'>
             {[...privateChat.keys()].map((name, index)=>(
-              <li type="none" onClick={()=>{setTab(name)}} className={`member ${tab===name && "active"}`} key={index}>
+              <li onClick={()=>{setTab(name)}} className="member-feed" key={index}>
                 {name} joined chatroom.
               </li>
             ))}
-          </ul>
+          </ul>  
         </div>
         </div>
           <div className='send-messages'>
@@ -162,7 +161,7 @@ const ChatRoom = () => {
             onChange={handleMessage}
             />
             <button type="button" className='send-button' onClick={sendPublicMessage}>Send</button>
-          </div>
+          </div>    
       </div>}
       </div>
       {tab!=="CHATROOM" && <div className='chat-content'>
@@ -172,9 +171,9 @@ const ChatRoom = () => {
               {chat.senderName !==userData.username && <div className='avatar'>
                 {chat.senderName}
                 </div>}
+                {chat.senderName}
                 <div className='message-data'>{chat.message}</div>
                 {chat.senderName ===userData.username && <div className='avatar self'>
-                {chat.senderName}
                 </div>}  
             </li>
           ))}
