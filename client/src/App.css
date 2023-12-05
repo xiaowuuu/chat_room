@@ -65,7 +65,7 @@ button:active {
   box-sizing: border-box;
 }
 
-.feed, .private-chat-messages {
+.feed, .private-chat-feed {
   background-color: #F4F7FE;
   flex-grow: 1;
   border-radius: 10px;
