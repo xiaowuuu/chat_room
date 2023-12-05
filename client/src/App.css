@@ -83,6 +83,10 @@ button:active {
   position: absolute;
   bottom: 0;
 }
+.input-message {
+  width: 600px;
+  height: 30px;
+}
 
 .member.active {
   background-color: #2D62EC;
@@ -110,8 +114,3 @@ li {
   margin-bottom: 5px; 
 }
 
-/* .input-message {
-  position: fixed;
-    bottom: 0;
-    width: 70%;
-} */
