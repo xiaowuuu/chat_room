@@ -56,6 +56,8 @@ button:active {
   border-radius: 10px;
   padding: 10px;
   overflow-y: auto; 
+  line-height: 20px;
+  
 }
 
 .chat-content {
@@ -90,11 +92,15 @@ button:active {
 
 .member.active {
   background-color: #2D62EC;
+  padding: 5px;
   color: white;
+  border-radius: 10px;
 }
 
 .member:hover {
   background-color: #2D62EC;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .feed-item.active {
@@ -104,7 +110,7 @@ button:active {
 
 ul {
   list-style: none;
-  padding: 0;
+  padding: 5px;
   margin: 0;
 }
 
