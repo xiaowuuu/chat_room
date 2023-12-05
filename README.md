@@ -1,0 +1,2 @@
+# chat_room
+The inception of the ChatRoom project was fueled by my curiosity with WebSocket technology, which was initially sparked during my capstone project. Eager to delve deeper into this real-time communication protocol, I endeavored to pursue further study. Throughout the project, I engaged in the practice of building handshakes with WebSocket to establish connections between diverse users. This journey not only involved troubleshooting challenges but also provided a valuable platform for enhancing my CSS skills. 
