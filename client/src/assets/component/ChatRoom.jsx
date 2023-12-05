@@ -163,8 +163,7 @@ const ChatRoom = () => {
             <button type="button" className='send-button' onClick={sendPublicMessage}>Send</button>
           </div>    
       </div>}
-      
-      
+  
       {tab!=="CHATROOM" && <div className='chat-content'>
       <ul className='private-chat-feed'>
         {[...privateChat.get(tab)].map((chat,index)=> (
