@@ -82,12 +82,14 @@ button:active {
 .send-messages {
   padding: 10px;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  display: flex;
+  min-width: 80px;
+  width: 60%;
 }
 .input-message {
   width: 600px;
-  height: 30px;
 }
 
 .member.active {
